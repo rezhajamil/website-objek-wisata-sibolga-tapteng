@@ -18,7 +18,7 @@ class CreateDestinationsTable extends Migration
             $table->string('name');
             $table->unsignedBigInteger('type');
             $table->string('region');
-            $table->string('address');
+            $table->string('address')->nullable();
             $table->text('description');
             $table->string('maps_url')->nullable();
             $table->timestamps();
