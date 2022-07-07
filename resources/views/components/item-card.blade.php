@@ -1,7 +1,9 @@
 <div class="flex transition-all shadow-lg hover:shadow-2xl bg-sky-600 rounded-xl wow fadeInUp col-span-full sm:col-span-1" data-wow-duration="2s" x-show="(type=='{{ $attributes['type'] }}'||type=='Semua') && (region=='{{ $attributes['region'] }}'||region=='Semua')">
     <div class="w-full bg-white h-[95%] border border-gray-200 shadow-lg pb-3 rounded-xl overflow-hidden">
         <a href="{{ route('destination.show',$attributes['id']) }}" class="inline-block overflow-hidden h-60">
-            <img class="rounded-t-lg" src="{{ asset('storage/'.$attributes['image']) }}" alt="" />
+            {{-- <img class="rounded-t-lg" src="{{ asset('storage/'.$attributes['image']) }}" alt="" /> --}}
+            <img class="rounded-t-lg" src="{{ $attributes['image'] }}" alt="" />
+
         </a>
         <div class="px-5 pb-3">
             <a href="{{ route('destination.show',$attributes['id']) }}" class="inline-block mb-2">

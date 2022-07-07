@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Destination;
 use Illuminate\Database\Seeder;
 
 class DestinationSeeder extends Seeder
@@ -258,5 +259,9 @@ class DestinationSeeder extends Seeder
                 'maps_url' => 'https://goo.gl/maps/MPPsnKct1MdkAvUh8'
             ],
         ];
+
+        foreach ($data as $key => $data) {
+            Destination::create($data);
+        }
     }
 }
