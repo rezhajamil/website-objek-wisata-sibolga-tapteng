@@ -68,7 +68,7 @@ class DestinationController extends Controller
                 }
             }
         }
-        return redirect()->route('dashboard')->with('success', 'Data berhasil disimpan');
+        return redirect()->route('admin.dashboard.index')->with('success', 'Data berhasil disimpan');
     }
 
     /**
@@ -121,7 +121,7 @@ class DestinationController extends Controller
             'maps_url' => $request->maps_url,
         ]);
 
-        return redirect()->route('dashboard')->with('success', 'Data berhasil diubah');
+        return redirect()->route('admin.dashboard.index')->with('success', 'Data berhasil diubah');
     }
 
     /**
@@ -133,6 +133,6 @@ class DestinationController extends Controller
     public function destroy(Destination $destination)
     {
         $destination->delete();
-        return redirect()->route('dashboard')->with('success', 'Data berhasil dihapus');
+        return redirect()->route('admin.dashboard.index')->with('success', 'Data berhasil dihapus');
     }
 }

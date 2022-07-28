@@ -3,31 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dsahboard</title>
+    <title>Dashboard</title>
 
     <!-- Tailwind -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
-        .font-family-karla { font-family: karla; }
-        .bg-sidebar { background: #3d68ff; }
-        .cta-btn { color: #3d68ff; }
-        .upgrade-btn { background: #1947ee; }
-        .upgrade-btn:hover { background: #0038fd; }
-        .active-nav-link { background: #1947ee; }
-        .nav-item:hover { background: #1947ee; }
-        .account-link:hover { background: #3d68ff; }
+
+        .font-family-karla {
+            font-family: karla;
+        }
+
+        .bg-sidebar {
+            background: #3d68ff;
+        }
+
+        .cta-btn {
+            color: #3d68ff;
+        }
+
+        .upgrade-btn {
+            background: #1947ee;
+        }
+
+        .upgrade-btn:hover {
+            background: #0038fd;
+        }
+
+        .active-nav-link {
+            background: #1947ee;
+        }
+
+        .nav-item:hover {
+            background: #1947ee;
+        }
+
+        .account-link:hover {
+            background: #3d68ff;
+        }
+
     </style>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/b2ba1193ce.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
-<body class="flex bg-gray-100 font-family-karla"  x-data="{changeCover:false,deleteImage:false}">
+<body class="flex bg-gray-100 font-family-karla" x-data="{changeCover:false,deleteImage:false}">
 
     <aside class="relative hidden w-64 h-full min-h-screen shadow-xl bg-sidebar sm:block">
         <div class="p-6">
-            <a href="{{ route('dashboard') }}" class="text-3xl font-semibold text-white uppercase hover:text-gray-300">Admin</a>
+            <a href="{{ route('admin.dashboard.index') }}" class="text-3xl font-semibold text-white uppercase hover:text-gray-300">Admin</a>
             <a href="{{ route('admin.destination.create') }}" class="flex items-center justify-center w-full py-2 mt-5 font-semibold bg-white rounded-tr-lg rounded-bl-lg rounded-br-lg shadow-lg cta-btn hover:shadow-xl hover:bg-gray-300">
                 <i class="mr-3 fas fa-plus"></i> Destinasi
             </a>
@@ -80,9 +105,9 @@
                 <i class="mr-3 fas fa-plus"></i> New Report
             </button> -->
         </header>
-    
+
         @yield('content')
-        
+
     </div>
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>

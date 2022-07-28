@@ -17,13 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::prefix('destination')->resource('/destination', HomeController::class);
 
 Route::middleware('auth')->group(
     function () {
-        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-        Route::prefix('admin')->name('admin.')->group(function () {
+        Route::get('/', [HomeController::class, 'index'])->name('home');
+        Route::prefix('destination')->resource('/destination', HomeController::class);
+        Route::prefix('admin')->name('admin.')->middleware('ensureRole:admin')->group(function () {
+            Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
             Route::resource('destination', DestinationController::class);
             Route::resource('destination_image', DestinationImageController::class);
             Route::put('destination_image/change_cover/{dest_id}', [DestinationImageController::class, 'changeCover'])->name('destination_image.changeCover');

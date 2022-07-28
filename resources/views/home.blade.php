@@ -46,11 +46,11 @@
 <div class="flex justify-center my-3">
     <div class="grid w-11/12 grid-cols-3 md:w-10/12 gap-x-4 gap-y-3">
         @foreach ($destinations as $data)
-        {{-- @foreach ($covers as $cover) --}}
-        {{-- @if ($data->id==$cover->dest_id) --}}
-        <x-item-card id="{{ $data->id }}" image="{{ asset('images/carousel1.jpg') }}" name="{{ $data->name }}" region="{{ $data->region }}" desc="{{ strlen($data->description)>80? substr($data->description,0,77).'...':$data->description }}" maps="{{ $data->maps_url }}" type="{{ $data->destType->name }}"></x-item-card>
-        {{-- @endif --}}
-        {{-- @endforeach --}}
+        @foreach ($covers as $cover)
+        @if ($data->id==$cover->dest_id)
+        <x-item-card id="{{ $data->id }}" image="{{ $cover->url }}" name="{{ $data->name }}" region="{{ $data->region }}" desc="{{ strlen($data->description)>80? substr($data->description,0,77).'...':$data->description }}" maps="{{ $data->maps_url }}" type="{{ $data->destType->name }}"></x-item-card>
+        @endif
+        @endforeach
         @endforeach
     </div>
 </div>
