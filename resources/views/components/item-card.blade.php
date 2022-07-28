@@ -2,7 +2,7 @@
     <div class="w-full bg-white h-[95%] border border-gray-200 shadow-lg pb-3 rounded-xl overflow-hidden">
         <a href="{{ route('destination.show',$attributes['id']) }}" class="inline-block overflow-hidden h-60">
             {{-- <img class="rounded-t-lg" src="{{ asset('storage/'.$attributes['image']) }}" alt="" /> --}}
-            <img class="rounded-t-lg" src="{{ $attributes['image'] }}" alt="" />
+            <img class="rounded-t-lg" src="{{ asset('storage/'.$attributes['image']) }}" alt="" />
 
         </a>
         <div class="px-5 pb-3">
